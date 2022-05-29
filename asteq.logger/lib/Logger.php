@@ -19,7 +19,9 @@ final class Logger extends AbstractLogger implements LoggerInterface
 
     public function addLogger(object $obj, $info = null)
     {
-        $this->loggers->attach($obj, $info);
+        if ($obj instanceof Type) {
+            $this->loggers->attach($obj, $info);
+        }
     }
 
     public function removeLogger(object $obj)
