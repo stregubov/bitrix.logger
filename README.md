@@ -67,15 +67,20 @@ return [
 ```php
 $serviceLocator = \Bitrix\Main\DI\ServiceLocator::getInstance();
 
-/* @var \Asteq\Logger\Logger $logger */
-$logger = $serviceLocator->get('asteq.logger.Logger');
+$logger = null;
+if ($serviceLocator->has('asteq.logger.Logger')) {
+    /* @var \Asteq\Logger\Logger $logger */
+    $logger = $serviceLocator->get('asteq.logger.Logger');
+}
 ```
 и используем
 
 ```php
 $arr = ['test' => 5, 'test2' => 6];
 
-$logger->info('test', $arr);
+if (!is_null($logger)) {
+    $logger->info('test', $arr);
+}
 ```
 
 
