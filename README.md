@@ -1,6 +1,6 @@
 # bitrix.logger
 
-Модуль логгирования для CMS 1C-Битрикс, совместимый с PSR-3 (https://www.php-fig.org/psr/psr-3/). Для установки модуля нужно закинуть папку asteq.logger с bitrix/modules или local/modules
+Модуль логгирования для CMS 1C-Битрикс, совместимый с PSR-3 (https://www.php-fig.org/psr/psr-3/). Для установки модуля нужно закинуть папку asteq.logger с bitrix/modules или local/modules и установить в административном разделе сайта http://your-site.ru/bitrix/admin/partner_modules.php?lang=ru
 
 
 ## Конфигурация
