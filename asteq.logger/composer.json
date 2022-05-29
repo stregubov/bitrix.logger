@@ -1,0 +1,14 @@
+{
+    "name": "asteq/logger",
+    "type": "library",
+    "require": {
+        "psr/log": "^1.1"
+    },
+    "authors": [
+        {
+            "name": "Svyatoslav Tregubov",
+            "email": "tregubov.s@asteq.ru"
+        }
+    ],
+    "minimum-stability": "stable"
+}
