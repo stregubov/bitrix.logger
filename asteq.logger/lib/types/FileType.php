@@ -10,7 +10,7 @@ final class FileType extends Type
     /**
      * @var string Шаблон сообщения
      */
-    private $template = "{date} {level} {message} {context}";
+    private $template = "{date} {level} {message}  userId - {user} {context}";
 
     public function __construct(array $attributes = [])
     {
@@ -61,13 +61,11 @@ final class FileType extends Type
     /**
      * @inheritDoc
      */
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = [])
     {
-        file_put_contents($this->filePath, trim(strtr($this->template, [
-                '{date}' => $this->getDate(),
-                '{level}' => $level,
-                '{message}' => $message,
-                '{context}' => $this->contextStringify($context),
-            ])) . PHP_EOL, FILE_APPEND);
+        $context['message'] = $message;
+        $context['level'] = $level;
+
+        file_put_contents($this->filePath, $this->getFormatter()->format($this->template, $context), FILE_APPEND);
     }
 }

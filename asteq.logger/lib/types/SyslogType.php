@@ -21,10 +21,7 @@ final class SyslogType extends Type
             return;
         }
 
-        syslog($level, trim(strtr($this->template, [
-            '{message}' => $message,
-            '{context}' => $this->contextStringify($context),
-        ])));
+        syslog($level, $this->getFormatter()->format($this->template, $context));
     }
 
     /**

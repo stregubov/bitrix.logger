@@ -2,6 +2,8 @@
 
 namespace Asteq\Logger\Types;
 
+use Asteq\Logger\LogFormatter;
+use Asteq\Logger\LogFormatterInterface;
 use DateTime;
 use DateTimeInterface;
 use Psr\Log\AbstractLogger;
@@ -14,6 +16,9 @@ abstract class Type extends AbstractLogger implements LoggerInterface
 
     /* @var string $dateFormat */
     private $dateFormat = DateTimeInterface::RFC2822;
+
+    /* @var LogFormatterInterface $formatter */
+    private $formatter;
 
     /**
      * @return bool
@@ -60,6 +65,24 @@ abstract class Type extends AbstractLogger implements LoggerInterface
                 $this->{$attribute} = $value;
             }
         }
+
+        $this->formatter = new LogFormatter();
+    }
+
+    /**
+     * @param LogFormatterInterface $formatter
+     */
+    public function setFormatter($formatter): void
+    {
+        $this->formatter = $formatter;
+    }
+
+    /**
+     * @return LogFormatterInterface
+     */
+    public function getFormatter()
+    {
+        return $this->formatter;
     }
 
     /**
