@@ -4,7 +4,7 @@ namespace Asteq\Logger\Types;
 
 use Bitrix\Main\Mail\Event;
 
-class AlertLogType extends Type
+final class AlertLogType extends Type
 {
     /*
      * @var string $eventName
