@@ -12,6 +12,10 @@ return [
                         'filePath' => $_SERVER['DOCUMENT_ROOT'].'/logs/log'.date('d.m.Y').".txt",
                     ]));
 
+                    $logger->addLogger(new Asteq\Logger\Types\AlertLogType([
+                        'isEnable' => true
+                    ]));
+
 //                    $logger->addLogger(new Asteq\Logger\Types\DBType([
 //                        'isEnable' => true,
 //                        'dsn' => 'sqlite:data/default.sqlite',
