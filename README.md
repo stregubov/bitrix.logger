@@ -16,7 +16,7 @@ $logger->addLogger(new Asteq\Logger\Types\FileType([
 ]));
 ```
 
-Выше создается базовый объект Logger, которому добавляется один из возможных типов хранилища логов - файлы. На текущий момент доступны файлы, syslog и база данных через PDO (https://www.php.net/manual/ru/book.pdo.php).
+Выше создается базовый объект Logger, которому добавляется один из возможных типов хранилища логов - файлы. На текущий момент доступны файлы, syslog, отправка на email и база данных через PDO (https://www.php.net/manual/ru/book.pdo.php).
 
 Так же для настройки логгера можно использовать ServiceLocator Битрикса (https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=14032).
 
